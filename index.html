@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+       Solved By Musa Dan kano
+    </title>
+    <style type="text/css">
+        h1{
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript" >
+         const pi = 3.142;
+        var s;
+        
+        function computeShape() {
+            s = document.getElementById('select').value;
+            if (s == "circle") {
+
+                document.getElementById('label1').innerHTML = "Enter radius";
+                document.getElementById('input2').disabled = true;
+                document.body.style.backgroundColor = "yellow";
+
+
+
+            } else if (s == "square") {
+                document.getElementById('label1').innerHTML = "Enter side";
+                document.getElementById('input2').disabled = true;
+                document.body.style.backgroundColor = "blue";
+            } else {
+                document.getElementById('input2').disabled = false;
+                document.getElementById('label1').innerHTML = "Enter length";
+                document.body.style.backgroundColor = "green";
+
+            }
+
+
+        }
+
+        function changeContent() {
+           var length = document.getElementById('input1').value;
+           var breadth = document.getElementById('input2').value;
+           var radius = document.getElementById('input1').value;
+           var side = document.getElementById('input1').value;
+           var radio1 = document.getElementById('radio1').value;
+           var radio2 = document.getElementById('radio2').value
+           var s = document.getElementById('select').value;
+           
+            if (s == "circle" && radio1 == "radio1") {
+                let circleArea = 2 * pi * radius * radius;
+                document.getElementById('result').innerHTML = "The result is " + circleArea;
+            }
+
+        if (s == "rectangle" && radio1 == "radio1") {
+             let rectangleArea = length * breadth;
+            document.getElementById('result').innerHTML = "The result is " + rectangleArea;
+        }
+        if (s == "rectangle" && radio2 == "radio2") {
+                var rectanglePerimeter = 2 * length * breadth;
+                 document.getElementById('result').innerHTML = "The result is " + rectanglePerimeter;
+            }
+             
+            if (s == "square" && radio1 == "radio1") {
+                let squareArea = side * side;
+                document.getElementById('result') = "The result id" + squareArea;
+
+            }
+            if (s== "square" && radio2 == "radio2") {
+                let squarePerimeter =  4 * side;
+            }
+        }
+    
+    </script>
+  
+</head>
+
+<body id="body">
+    <h1>Musa Q</h1>
+    <form>
+        <label>:Select Object shape</label>
+        <select onchange="computeShape()" id="select">
+            <option value="rectangle">rectangle</option>
+            <option value="circle">circle</option>
+            <option value="square">square</option>
+        </select><br><br>
+        <label id="label1">
+            Enter Length
+        </label>
+        <input type="number" id="input1" required><br><br>
+        <label id="label2">
+            Enter breadth
+        </label>
+        <input type="number" id="input2" required>
+
+        <hr> Select operator <br>
+        <input type="radio" name="radio" id="radio1" value="radio1">Area of the shape<br>
+        <input type="radio" name="radio" id="radio2" value="radio2">Perimeter of the shape<br><br>
+
+        <button onclick="changeContent()" onclick="computeRectangle()">
+            clickme
+        </button>
+        <p id="result">
+            The result is:
+        </p>
+    </form>
+
+</body>
+
+
+
+
+
+
+</html>
